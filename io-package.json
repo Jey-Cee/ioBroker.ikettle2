@@ -1,0 +1,292 @@
+{
+	"common": {
+		"name": "ikettle2",
+		"version": "1.0.0",
+		"news": {
+			"1.0.0": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"titleLang": {
+			"en": "Smarter iKettle 2.0",
+			"de": "Intelligenter iKettle 2.0",
+			"ru": "Умнее iKettle 2.0",
+			"pt": "IKettle 2.0 mais inteligente",
+			"nl": "Slimmere iKettle 2.0",
+			"fr": "Plus intelligent iKettle 2.0",
+			"it": "IKettle 2.0 più intelligente",
+			"es": "IKettle 2.0 más inteligente",
+			"pl": "Inteligentniejszy iKettle 2.0",
+			"zh-cn": "更智能的iKettle 2.0"
+		},
+		"desc": {
+			"en": "Control your Smarter iKettle 2.0 with ioBroker.",
+			"de": "Steuern Sie Ihren Smarter iKettle 2.0 mit ioBroker.",
+			"ru": "Управляйте своим Smarter iKettle 2.0 с помощью ioBroker.",
+			"pt": "Controle o seu iKettle 2.0 mais inteligente com o ioBroker.",
+			"nl": "Bedien uw Smarter iKettle 2.0 met ioBroker.",
+			"fr": "Contrôlez votre Smart iKettle 2.0 avec ioBroker.",
+			"it": "Controlla il tuo iKettle 2.0 più intelligente con ioBroker.",
+			"es": "Controle su Smarter iKettle 2.0 con ioBroker.",
+			"pl": "Steruj swoim Smarter iKettle 2.0 za pomocą ioBroker.",
+			"zh-cn": "使用ioBroker控制您的Smarter iKettle 2.0。"
+		},
+		"authors": [
+			"Jey Cee <jey-cee@live.com>"
+		],
+		"keywords": [
+			"smarter",
+			"ikettle 2.0",
+			"water heater"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"icon": "ikettle2.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/jey-cee/ioBroker.ikettle2/master/admin/ikettle2.png",
+		"readme": "https://github.com/jey-cee/ioBroker.ikettle2/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "household",
+		"compact": true,
+		"connectionType": "local",
+		"dataSource": "push",
+		"materialize": true,
+		"dependencies": [
+			{
+				"js-controller": ">=2.0.0"
+			}
+		]
+	},
+	"native": {
+		"ip": ""
+	},
+	"objects": [],
+	"instanceObjects": [
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name": "Information"
+			},
+			"native": {}
+		},
+		{
+			"_id": "kettle",
+			"type": "device",
+			"common": {
+				"name": "kettle"
+			},
+			"native": {}
+		},
+		{
+			"_id": "kettle.preset",
+			"type": "channel",
+			"common": {
+				"name": "Presets for manual usage"
+			},
+			"native": {}
+		},
+		{
+			"_id": "info.connection",
+			"type": "state",
+			"common": {
+				"role": "indicator.connected",
+				"name": "Device or service connected",
+				"type": "boolean",
+				"read": true,
+				"write": false,
+				"def": false
+			},
+			"native": {}
+		},
+		{
+			"_id": "kettle.on",
+			"type": "state",
+			"common": {
+				"name": "On",
+				"type": "boolean",
+				"role": "switch",
+				"read": true,
+				"write": true
+			}
+		},
+		{
+			"_id": "kettle.on_formula",
+			"type": "state",
+			"common": {
+				"name": "On",
+				"type": "boolean",
+				"role": "switch",
+				"read": true,
+				"write": true
+			}
+		},
+		{
+			"_id": "kettle.set_temperature",
+			"type": "state",
+			"common": {
+				"name": "Set heating temperature",
+				"type": "number",
+				"role": "value.temperature",
+				"read": true,
+				"write": false,
+				"unit": "°C",
+				"def": 0
+			}
+		},
+		{
+			"_id": "kettle.water_temperature",
+			"type": "state",
+			"common": {
+				"name": "Water temperature",
+				"type": "number",
+				"role": "value.temperature",
+				"read": true,
+				"write": false,
+				"unit": "°C",
+				"def": 0
+			}
+		},
+		{
+			"_id": "kettle.formula_temperature",
+			"type": "state",
+			"common": {
+				"name": "Water temperature",
+				"type": "number",
+				"role": "value.temperature",
+				"read": true,
+				"write": false,
+				"unit": "°C",
+				"def": 0
+			}
+		},
+		{
+			"_id": "kettle.on_plate",
+			"type": "state",
+			"common": {
+				"name": "Kettle is on the plate",
+				"type": "boolean",
+				"role": "indicator.reachable",
+				"read": true,
+				"write": false
+			}
+		},
+		{
+			"_id": "kettle.warming_time",
+			"type": "state",
+			"common": {
+				"name": "Time to hold Temperature",
+				"type": "number",
+				"role": "value",
+				"read": true,
+				"write": true,
+				"min": 0,
+				"max": 30,
+				"def": 0,
+				"unit": "min"
+			}
+		},
+		{
+			"_id": "kettle.water_level",
+			"type": "state",
+			"common": {
+				"name": "Water level",
+				"type": "number",
+				"role": "level",
+				"read": true,
+				"write": true,
+				"min": 0,
+				"max": 100,
+				"def": 0,
+				"unit": "L"
+			}
+		},
+		{
+			"_id": "kettle.calibrate",
+			"type": "state",
+			"common": {
+				"name": "Calibrate",
+				"type": "boolean",
+				"role": "switch",
+				"read": true,
+				"write": true,
+				"def": false
+			}
+		},
+		{
+			"_id": "kettle.preset.set_preset",
+			"type": "state",
+			"common": {
+				"name": "Send presets to iKettle",
+				"type": "boolean",
+				"role": "switch",
+				"read": true,
+				"write": true,
+				"def": false
+			}
+		},
+		{
+			"_id": "kettle.preset.get_preset",
+			"type": "state",
+			"common": {
+				"name": "Get presets from iKettle",
+				"type": "boolean",
+				"role": "switch",
+				"read": true,
+				"write": true,
+				"def": false
+			}
+		},
+		{
+			"_id": "kettle.preset.warming_time",
+			"type": "state",
+			"common": {
+				"name": "Time to hold Temperature",
+				"type": "number",
+				"role": "value",
+				"read": true,
+				"write": true,
+				"min": 0,
+				"max": 30,
+				"def": 0,
+				"unit": "min"
+			}
+		},
+		{
+			"_id": "kettle.preset.temperature",
+			"type": "state",
+			"common": {
+				"name": "Heating temperature",
+				"type": "number",
+				"role": "value.temperature",
+				"read": true,
+				"write": false,
+				"unit": "°C",
+				"def": 0
+			}
+		},
+		{
+			"_id": "kettle.preset.formula_temperature",
+			"type": "state",
+			"common": {
+				"name": "Formula temperature",
+				"type": "number",
+				"role": "value.temperature",
+				"read": true,
+				"write": false,
+				"unit": "°C",
+				"def": 0
+			}
+		}
+	]
+}

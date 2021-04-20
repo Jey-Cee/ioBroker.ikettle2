@@ -1,0 +1,39 @@
+{
+	"cli": true,
+	"adapterName": "ikettle2",
+	"title": "Smarter iKettle 2.0",
+	"description": "Control your Smarter iKettle 2.0 with ioBroker.",
+	"keywords": [
+		"smarter",
+		"ikettle 2.0",
+		"water heater"
+	],
+	"expert": "yes",
+	"features": [
+		"adapter"
+	],
+	"adminFeatures": [],
+	"type": "household",
+	"startMode": "daemon",
+	"connectionType": "local",
+	"dataSource": "push",
+	"connectionIndicator": "yes",
+	"language": "JavaScript",
+	"adminReact": "no",
+	"tools": [
+		"ESLint",
+		"type checking"
+	],
+	"indentation": "Tab",
+	"quotes": "single",
+	"es6class": "yes",
+	"authorName": "Jey Cee",
+	"authorGithub": "jey-cee",
+	"authorEmail": "jey-cee@live.com",
+	"gitRemoteProtocol": "HTTPS",
+	"gitCommit": "no",
+	"license": "MIT License",
+	"ci": "gh-actions",
+	"dependabot": "yes",
+	"creatorVersion": "1.33.0"
+}
