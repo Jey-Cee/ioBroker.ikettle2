@@ -18,7 +18,7 @@
     "url": "https://github.com/Jey-Cee/ioBroker.ikettle2"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.4.0"
+    "@iobroker/adapter-core": "^2.5.0"
   },
   "devDependencies": {
     "@iobroker/testing": "^2.4.4",
