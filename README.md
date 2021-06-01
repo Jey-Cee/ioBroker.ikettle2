@@ -61,6 +61,8 @@ After the beep from base you can turn the kettle back on base and use it.
 ---
 ## Changelog
 
+* (Jey Cee) fixes for Beta release
+
 ### 1.0.0
 * (Jey Cee) initial release
 
