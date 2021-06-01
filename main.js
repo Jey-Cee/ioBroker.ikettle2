@@ -88,9 +88,11 @@ class Ikettle2 extends utils.Adapter {
 	 */
 	async onUnload(callback) {
 		try {
-			client.end();
 			await this.setStateAsync(`${this.namespace}.info.connection`, {val: false, ack: true});
-			callback();
+			client.end( () => {
+				callback();
+			});
+
 		} catch (e) {
 			callback();
 		}
