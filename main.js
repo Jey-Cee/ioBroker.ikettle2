@@ -119,7 +119,7 @@ class Ikettle2 extends utils.Adapter {
 	 * @param {ioBroker.State | null | undefined} state
 	 */
 	async onStateChange(id, state) {
-		if (state && state.from !== `system.adapter.${this.namespace}`) {
+		if (state && state.ack === false) {
 			// The state was changed
 			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 			switch (id){
