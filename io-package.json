@@ -1,7 +1,7 @@
 {
 	"common": {
 		"name": "ikettle2",
-		"version": "1.0.1",
+		"version": "1.0.2",
 		"news": {
 			"1.0.1": {
 				"en": "fixes for Beta release"
@@ -121,8 +121,23 @@
 				"type": "boolean",
 				"role": "switch",
 				"read": true,
-				"write": true
-			}
+				"write": true,
+				"def": false,
+				"desc": {
+					"en": "Turns the kettle on. set_temperature has to be set before.",
+					"de": "Schaltet den Wasserkocher ein. set_temperature muss vorher gesetzt werden.",
+					"ru": "Включает чайник. set_temperature должен быть установлен ранее.",
+					"pt": "Liga o bule. set_temperature deve ser definido antes.",
+					"nl": "Zet de waterkoker aan. set_temperature moet eerder worden ingesteld.",
+					"fr": "Allume la bouilloire. set_temperature doit être défini avant.",
+					"it": "Accende il bollitore. set_temperature deve essere impostato prima.",
+					"es": "Enciende el hervidor. set_temperature debe establecerse antes.",
+					"pl": "Włącza czajnik. set_temperature musi być ustawiony wcześniej.",
+					"zh-cn": "打开水壶。必须先设置set_temperature。",
+					"uk": "Вмикає чайник. set_temperature має бути встановлений раніше."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.on_formula",
@@ -132,8 +147,23 @@
 				"type": "boolean",
 				"role": "switch",
 				"read": true,
-				"write": true
-			}
+				"write": true,
+				"def": false,
+				"desc": {
+					"en": "Turns the kettle on, heating up and holds the formula_temperature for the warming_time. formula_temperature and warming_time has to be set before.",
+					"de": "Schaltet den Wasserkocher ein, heizt auf und hält die formula_temperature für die warming_time. formula_temperature und warming_time müssen vorher gesetzt werden.",
+					"ru": "Включает чайник, нагревает и удерживает formula_temperature для warming_time. formula_temperature и warming_time должны быть установлены ранее.",
+					"pt": "Liga o bule, aquecendo e mantendo a formula_temperature para o warming_time. formula_temperature e warming_time devem ser definidos antes.",
+					"nl": "Zet de waterkoker aan, verwarmt en houdt de formule_temperatuur voor de warming_time. formule_temperatuur en warming_time moeten eerder worden ingesteld.",
+					"fr": "Allume la bouilloire, chauffe et maintient la formule_temperature pour le warming_time. formule_temperature et warming_time doivent être définis avant.",
+					"it": "Accende il bollitore, riscalda e mantiene la formula_temperature per il warming_time. formula_temperature e warming_time devono essere impostati prima.",
+					"es": "Enciende el hervidor, calienta y mantiene la formula_temperature para el warming_time. formula_temperature y warming_time deben establecerse antes.",
+					"pl": "Włącza czajnik, podgrzewa i utrzymuje formula_temperature przez warming_time. formula_temperature i warming_time muszą być ustawione wcześniej.",
+					"zh-cn": "打开水壶，加热并保持warming_time的formula_temperature。必须先设置formula_temperature和warming_time。",
+					"uk": "Увімкнути чайник, нагріти і утримувати formula_temperature для warming_time. formula_temperature і warming_time мають бути встановлені раніше."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.set_temperature",
@@ -145,8 +175,22 @@
 				"read": true,
 				"write": false,
 				"unit": "°C",
-				"def": 0
-			}
+				"def": 0,
+				"desc": {
+					"en": "The target temperature for heating up water.",
+					"de": "Die Zieltemperatur zum Erhitzen von Wasser.",
+					"ru": "Целевая температура для нагрева воды.",
+					"pt": "A temperatura alvo para aquecer a água.",
+					"nl": "De doeltemperatuur voor het verwarmen van water.",
+					"fr": "La température cible pour chauffer l'eau.",
+					"it": "La temperatura target per riscaldare l'acqua.",
+					"es": "La temperatura objetivo para calentar el agua.",
+					"pl": "Docelowa temperatura do podgrzania wody.",
+					"zh-cn": "加热水的目标温度。",
+					"uk": "Цільова температура для нагрівання води."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.water_temperature",
@@ -158,8 +202,22 @@
 				"read": true,
 				"write": false,
 				"unit": "°C",
-				"def": 0
-			}
+				"def": 0,
+				"desc": {
+					"en": "The actual temperature of the water.",
+					"de": "Die tatsächliche Temperatur des Wassers.",
+					"ru": "Фактическая температура воды.",
+					"pt": "A temperatura real da água.",
+					"nl": "De werkelijke temperatuur van het water.",
+					"fr": "La température réelle de l'eau.",
+					"it": "La temperatura effettiva dell'acqua.",
+					"es": "La temperatura real del agua.",
+					"pl": "Rzeczywista temperatura wody.",
+					"zh-cn": "水的实际温度。",
+					"uk": "Фактична температура води."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.formula_temperature",
@@ -171,8 +229,22 @@
 				"read": true,
 				"write": false,
 				"unit": "°C",
-				"def": 0
-			}
+				"def": 0,
+				"desc": {
+					"en": "The target temperature after heating up the water to set_temperature.",
+					"de": "Die Zieltemperatur nach dem Erhitzen des Wassers auf set_temperature.",
+					"ru": "Целевая температура после нагрева воды до set_temperature.",
+					"pt": "A temperatura alvo após aquecer a água para set_temperature.",
+					"nl": "De doeltemperatuur na het verwarmen van het water tot set_temperature.",
+					"fr": "La température cible après avoir chauffé l'eau à set_temperature.",
+					"it": "La temperatura target dopo aver riscaldato l'acqua a set_temperature.",
+					"es": "La temperatura objetivo después de calentar el agua a set_temperature.",
+					"pl": "Docelowa temperatura po podgrzaniu wody do set_temperature.",
+					"zh-cn": "加热水至set_temperature后的目标温度。",
+					"uk": "Цільова температура після нагрівання води до set_temperature."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.on_plate",
@@ -182,8 +254,23 @@
 				"type": "boolean",
 				"role": "indicator.reachable",
 				"read": true,
-				"write": false
-			}
+				"write": false,
+				"def": false,
+				"desc": {
+					"en": "Indicates if the kettle is on the base plate.",
+					"de": "Gibt an, ob der Wasserkocher auf der Basisplatte steht.",
+					"ru": "Указывает, находится ли чайник на платформе.",
+					"pt": "Indica se o bule está na base.",
+					"nl": "Geeft aan of de waterkoker op de basisplaat staat.",
+					"fr": "Indique si la bouilloire est sur la plaque de base.",
+					"it": "Indica se il bollitore è sulla piastra di base.",
+					"es": "Indica si la tetera está en la placa base.",
+					"pl": "Wskazuje, czy czajnik znajduje się na płycie podstawy.",
+					"zh-cn": "指示水壶是否在底座上。",
+					"uk": "Вказує, чи знаходиться чайник на платформі."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.warming_time",
@@ -197,8 +284,22 @@
 				"min": 0,
 				"max": 30,
 				"def": 0,
-				"unit": "min"
-			}
+				"unit": "min",
+				"desc": {
+					"en": "The time the kettle will hold the water at the formula temperature before turning off. Note: 0 = Not used, the minimum time is 5 minutes and the maximum is 30 minutes.",
+					"de": "Die Zeit, die der Wasserkocher das Wasser bei der Formeltemperatur halten wird, bevor er sich ausschaltet. Hinweis: 0 = Nicht verwendet, die Mindestzeit beträgt 5 Minuten und die maximale Zeit 30 Minuten.",
+					"ru": "Время, в течение которого чайник будет удерживать воду при температуре формулы перед выключением. Примечание: 0 = Не используется, минимальное время - 5 минут, максимальное - 30 минут.",
+					"pt": "O tempo que o bule manterá a água na temperatura da fórmula antes de desligar. Nota: 0 = Não utilizado, o tempo mínimo é de 5 minutos e o máximo é de 30 minutos.",
+					"nl": "De tijd dat de waterkoker het water op de formuletemperatuur zal houden voordat hij wordt uitgeschakeld. Opmerking: 0 = Niet gebruikt, de minimale tijd is 5 minuten en de maximale tijd is 30 minuten.",
+					"fr": "Le temps pendant lequel la bouilloire maintiendra l'eau à la température de la formule avant de s'éteindre. Remarque: 0 = Non utilisé, le temps minimum est de 5 minutes et le maximum est de 30 minutes.",
+					"it": "Il tempo in cui il bollitore manterrà l'acqua alla temperatura della formula prima di spegnersi. Nota: 0 = Non utilizzato, il tempo minimo è di 5 minuti e il massimo è di 30 minuti.",
+					"es": "El tiempo que la tetera mantendrá el agua a la temperatura de la fórmula antes de apagarse. Nota: 0 = No utilizado, el tiempo mínimo es de 5 minutos y el máximo es de 30 minutos.",
+					"pl": "Czas, w którym czajnik będzie utrzymywał wodę w temperaturze formuły przed wyłączeniem. Uwaga: 0 = Nie używane, minimalny czas to 5 minut, a maksymalny to 30 minut.",
+					"zh-cn": "水壶在关闭之前将保持水在配方温度的时间。注意：0 =未使用，最短时间为5分钟，最长时间为30分钟。",
+					"uk": "Час, протягом якого чайник буде утримувати воду при температурі формули перед вимкненням. Примітка: 0 = Не використовується, мінімальний час - 5 хвилин, максимальний - 30 хвилин."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.water_level",
@@ -212,8 +313,22 @@
 				"min": 0,
 				"max": 100,
 				"def": 0,
-				"unit": "L"
-			}
+				"unit": "L",
+				"desc": {
+					"en": "Actual water amount in kettle. Note: The accuracy isn't that good and could be completely false, so check that there is water in the kettle with your eyes.",
+					"de": "Tatsächliche Wassermenge im Wasserkocher. Hinweis: Die Genauigkeit ist nicht so gut und kann völlig falsch sein, daher überprüfen Sie mit Ihren Augen, ob sich Wasser im Wasserkocher befindet.",
+					"ru": "Фактическое количество воды в чайнике. Примечание: точность не очень хорошая и может быть совершенно ложной, поэтому проверьте, есть ли в чайнике вода, смотря глазами.",
+					"pt": "Quantidade real de água no bule. Nota: A precisão não é tão boa e pode ser completamente falsa, portanto, verifique se há água no bule com os olhos.",
+					"nl": "De werkelijke hoeveelheid water in de waterkoker. Opmerking: de nauwkeurigheid is niet zo goed en kan volledig onjuist zijn, dus controleer met uw ogen of er water in de waterkoker zit.",
+					"fr": "Quantité d'eau réelle dans la bouilloire. Remarque: la précision n'est pas très bonne et peut être complètement fausse, vérifiez donc qu'il y a de l'eau dans la bouilloire avec vos yeux.",
+					"it": "Quantità effettiva di acqua nella teiera. Nota: la precisione non è così buona e potrebbe essere completamente falsa, quindi controlla che ci sia acqua nella teiera con gli occhi.",
+					"es": "Cantidad real de agua en la tetera. Nota: la precisión no es tan buena y podría ser completamente falsa, así que verifique que haya agua en la tetera con sus ojos.",
+					"pl": "Aktualna ilość wody w czajniku. Uwaga: dokładność nie jest zbyt dobra i może być całkowicie fałszywa, więc sprawdź, czy w czajniku jest woda za pomocą oczu.",
+					"zh-cn": "水壶中的实际水量。注意：精度不是很好，可能完全错误，因此请用眼睛检查水壶中是否有水。",
+					"uk": "Фактичний обсяг води в чайнику. Примітка: точність не дуже хороша і може бути повністю хибною, тому перевірте, чи є в чайнику вода, дивлячись очима."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.calibrate",
@@ -224,8 +339,22 @@
 				"role": "switch",
 				"read": true,
 				"write": true,
-				"def": false
-			}
+				"def": false,
+				"desc": {
+					"en": "Start base calibration.",
+					"de": "Starten Sie die Basis-Kalibrierung.",
+					"ru": "Начать базовую калибровку.",
+					"pt": "Iniciar a calibração da base.",
+					"nl": "Start basis kalibratie.",
+					"fr": "Démarrer l'étalonnage de base.",
+					"it": "Avvia la calibrazione di base.",
+					"es": "Iniciar la calibración de la base.",
+					"pl": "Uruchom kalibrację podstawową.",
+					"zh-cn": "启动基本校准。",
+					"uk": "Запустіть базову калібрування."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.preset.set_preset",
@@ -236,8 +365,22 @@
 				"role": "switch",
 				"read": true,
 				"write": true,
-				"def": false
-			}
+				"def": false,
+				"desc": {
+					"en": "Set the preset values on the kettle for manual control (without APP). formula_temperature, temperature and warming_time in preset folder has to be set before.",
+					"de": "Legen Sie die Voreinstellungswerte am Wasserkocher für die manuelle Steuerung (ohne APP) fest. Formeltemperatur, Temperatur und Aufwärmzeit im Voreinstellungsordner müssen zuvor festgelegt werden.",
+					"ru": "Установите предустановленные значения на чайнике для ручного управления (без приложения). температура формулы, температура и время подогрева в папке с предустановками должны быть установлены заранее.",
+					"pt": "Defina os valores predefinidos no bule para controle manual (sem APP). temperatura da fórmula, temperatura e tempo de aquecimento na pasta de predefinição deve ser definida antes.",
+					"nl": "Stel de vooraf ingestelde waarden in op de waterkoker voor handmatige bediening (zonder APP). formule_temperatuur, temperatuur en opwarmtijd in de map met voorinstellingen moeten eerder worden ingesteld.",
+					"fr": "Définissez les valeurs prédéfinies sur la bouilloire pour un contrôle manuel (sans APP). la température de la formule, la température et le temps de réchauffement dans le dossier de préréglage doivent être définis avant.",
+					"it": "Imposta i valori preimpostati sulla teiera per il controllo manuale (senza APP). temperatura della formula, temperatura e tempo di riscaldamento nella cartella delle impostazioni predefinite deve essere impostata in precedenza.",
+					"es": "Establezca los valores preestablecidos en la tetera para el control manual (sin APP). la temperatura de la fórmula, la temperatura y el tiempo de calentamiento en la carpeta de configuración preestablecida debe establecerse antes.",
+					"pl": "Ustaw wartości predefiniowane na czajniku do sterowania ręcznego (bez aplikacji). temperatura formuły, temperatura i czas podgrzewania w folderze z ustawieniami wstępnymi muszą być ustawione wcześniej.",
+					"zh-cn": "在水壶上设置预设值以进行手动控制（无需APP）。预设文件夹中的formula_temperature，temperature和warming_time必须先设置。",
+					"uk": "Встановіть попередньо встановлені значення на чайнику для ручного керування (без додатка). температура формули, температура та час підігріву в папці з попередніми налаштуваннями повинні бути встановлені заздалегідь."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.preset.get_preset",
@@ -248,8 +391,22 @@
 				"role": "switch",
 				"read": true,
 				"write": true,
-				"def": false
-			}
+				"def": false,
+				"desc": {
+					"en": "Read the preset values for manual control (without APP) from the kettle.",
+					"de": "Lesen Sie die Voreinstellungswerte für die manuelle Steuerung (ohne APP) vom Wasserkocher.",
+					"ru": "Прочитайте предустановленные значения для ручного управления (без приложения) с чайника.",
+					"pt": "Leia os valores predefinidos para controle manual (sem APP) do bule.",
+					"nl": "Lees de vooraf ingestelde waarden voor handmatige bediening (zonder APP) van de waterkoker.",
+					"fr": "Lisez les valeurs prédéfinies pour un contrôle manuel (sans APP) de la bouilloire.",
+					"it": "Leggi i valori preimpostati per il controllo manuale (senza APP) dal bollitore.",
+					"es": "Lea los valores preestablecidos para el control manual (sin APP) de la tetera.",
+					"pl": "Odczytaj wartości predefiniowane do sterowania ręcznego (bez aplikacji) z czajnika.",
+					"zh-cn": "从水壶中读取手动控制（无需APP）的预设值。",
+					"uk": "Прочитайте попередньо встановлені значення для ручного керування (без додатка) з чайника."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.preset.warming_time",
@@ -263,8 +420,22 @@
 				"min": 0,
 				"max": 30,
 				"def": 0,
-				"unit": "min"
-			}
+				"unit": "min",
+				"desc": {
+					"en": "The time the kettle will hold the water at the formula temperature before turning off. Note: 0 = Not used, the minimum time is 5 minutes and the maximum is 30 minutes.",
+					"de": "Die Zeit, die der Wasserkocher das Wasser vor dem Ausschalten auf der Formeltemperatur hält. Hinweis: 0 = Nicht verwendet, die Mindestzeit beträgt 5 Minuten und die maximale Zeit 30 Minuten.",
+					"ru": "Время, в течение которого чайник будет удерживать воду на температуре формулы перед выключением. Примечание: 0 = Не используется, минимальное время - 5 минут, максимальное - 30 минут.",
+					"pt": "O tempo que o bule manterá a água na temperatura da fórmula antes de desligar. Nota: 0 = Não utilizado, o tempo mínimo é de 5 minutos e o máximo é de 30 minutos.",
+					"nl": "De tijd dat de waterkoker het water op de formuletemperatuur zal houden voordat hij wordt uitgeschakeld. Opmerking: 0 = Niet gebruikt, de minimale tijd is 5 minuten en de maximale tijd is 30 minuten.",
+					"fr": "Le temps que la bouilloire maintiendra l'eau à la température de la formule avant de s'éteindre. Remarque: 0 = Non utilisé, le temps minimum est de 5 minutes et le maximum est de 30 minutes.",
+					"it": "Il tempo in cui il bollitore manterrà l'acqua alla temperatura della formula prima di spegnersi. Nota: 0 = Non utilizzato, il tempo minimo è di 5 minuti e il massimo è di 30 minuti.",
+					"es": "El tiempo que la tetera mantendrá el agua a la temperatura de la fórmula antes de apagarse. Nota: 0 = No utilizado, el tiempo mínimo es de 5 minutos y el máximo es de 30 minutos.",
+					"pl": "Czas, w którym czajnik będzie trzymał wodę w temperaturze formuły przed wyłączeniem. Uwaga: 0 = Nie używane, minimalny czas to 5 minut, a maksymalny to 30 minut.",
+					"zh-cn": "水壶在关闭之前将保持水在配方温度下的时间。注意：0 =未使用，最短时间为5分钟，最长时间为30分钟。",
+					"uk": "Час, протягом якого чайник буде утримувати воду на температурі формули перед вимкненням. Примітка: 0 = Не використовується, мінімальний час - 5 хвилин, максимальний - 30 хвилин."
+				}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.preset.temperature",
@@ -277,7 +448,8 @@
 				"write": false,
 				"unit": "°C",
 				"def": 0
-			}
+			},
+			"native": {}
 		},
 		{
 			"_id": "kettle.preset.formula_temperature",
@@ -289,8 +461,22 @@
 				"read": true,
 				"write": false,
 				"unit": "°C",
-				"def": 0
-			}
+				"def": 0,
+				"desc": {
+					"en": "The target temperature after heating up the water to set_temperature.",
+					"de": "Die Zieltemperatur nach dem Erhitzen des Wassers auf set_temperature.",
+					"ru": "Целевая температура после нагрева воды до set_temperature.",
+					"pt": "A temperatura alvo após aquecer a água para set_temperature.",
+					"nl": "De doeltemperatuur na het verwarmen van het water tot set_temperature.",
+					"fr": "La température cible après avoir chauffé l'eau à set_temperature.",
+					"it": "La temperatura target dopo aver riscaldato l'acqua a set_temperature.",
+					"es": "La temperatura objetivo después de calentar el agua a set_temperature.",
+					"pl": "Docelowa temperatura po podgrzaniu wody do set_temperature.",
+					"zh-cn": "将水加热到set_temperature后的目标温度。",
+					"uk": "Цільова температура після нагрівання води до set_temperature."
+				}
+			},
+			"native": {}
 		}
 	]
 }

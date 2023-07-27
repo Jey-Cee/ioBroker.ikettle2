@@ -65,19 +65,24 @@ class Ikettle2 extends utils.Adapter {
 
 		client.on('timeout', async () => {
 			await this.setStateAsync(`${this.namespace}.info.connection`, {val: false, ack: true});
+			client.destroy();
 			client.connect({port: 2081, host: this.config.ip});
 		});
 
 		client.on('error', async (error) => {
 			this.log.error(JSON.stringify(error));
+			client.destroy();
+			client.connect({port: 2081, host: this.config.ip});
 			await this.setStateAsync(`${this.namespace}.info.connection`, {val: false, ack: true});
 		});
 
 		client.on('close', async () => {
+			this.log.info('Connection closed by remote host');
 			await this.setStateAsync(`${this.namespace}.info.connection`, {val: false, ack: true});
 		});
 
 		client.on('end', async () => {
+			this.log.info('Connection ended by remote host');
 			await this.setStateAsync(`${this.namespace}.info.connection`, {val: false, ack: true});
 		});
 	}
@@ -97,23 +102,6 @@ class Ikettle2 extends utils.Adapter {
 			callback();
 		}
 	}
-
-	// If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
-	// You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
-	// /**
-	//  * Is called if a subscribed object changes
-	//  * @param {string} id
-	//  * @param {ioBroker.Object | null | undefined} obj
-	//  */
-	// onObjectChange(id, obj) {
-	// 	if (obj) {
-	// 		// The object was changed
-	// 		this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-	// 	} else {
-	// 		// The object was deleted
-	// 		this.log.info(`object ${id} deleted`);
-	// 	}
-	// }
 
 	/**
 	 * Is called if a subscribed state changes
@@ -184,8 +172,8 @@ class Ikettle2 extends utils.Adapter {
 				const val = (lastWaterLevel[0] + lastWaterLevel[1] + lastWaterLevel[2] + lastWaterLevel[3] + lastWaterLevel[4]) / 5;
 				const min = 2090, max = 2185, liter = 1.8;
 				level = (liter / (max - min)) * (val - min);
-
-				await this.setStateChangedAsync(`${this.namespace}.kettle.water_level`, {val: level.toFixed(1), ack: true});
+				let result = Math.round(parseFloat(level.toFixed(1)) * 100) / 100;
+				await this.setStateChangedAsync(`${this.namespace}.kettle.water_level`, {val: result, ack: true});
 				lastWaterLevel.splice(4, 1);
 				lastWaterLevel.splice(0, 0, raw);
 			}
@@ -195,7 +183,8 @@ class Ikettle2 extends utils.Adapter {
 			lastWaterTemp.push(data[2]);
 		} else {
 			const val = (lastWaterTemp[0] + lastWaterTemp[1] + lastWaterTemp[2]) / 3;
-			await this.setStateChangedAsync(`${this.namespace}.kettle.water_temperature`, {val: val.toFixed(0), ack: true});
+			const result = Math.round(parseFloat(val.toFixed(0)) * 100) / 100;
+			await this.setStateChangedAsync(`${this.namespace}.kettle.water_temperature`, {val: result, ack: true});
 			lastWaterTemp.splice(2, 1);
 			lastWaterTemp.splice(0, 0, data[2]);
 		}
@@ -272,7 +261,7 @@ class Ikettle2 extends utils.Adapter {
 		const warmingTime = await this.getStateAsync(`${this.namespace}.kettle.preset.warming_time`);
 		const msg = Buffer.from([0x1f, '0x' + warmingTime.val.toString(16), '0x' + temp.val.toString(16), '0x' + formulaTemp.val.toString(16), 0x7e]);
 
-		if(wrmingTime.val < 5 && warmingTime.val !== 0){
+		if(warmingTime.val < 5 && warmingTime.val !== 0){
 			this.log.warn('Minimum warming time 5 minutes');
 			return;
 		}
