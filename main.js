@@ -13,7 +13,7 @@ const utils = require('@iobroker/adapter-core');
 
 const socket = require('net');
 
-let client, lastWaterLevel = [], lastWaterTemp = [];
+let client, lastWaterLevel = [], lastWaterTemp = [], lastDataReceived = null;
 
 class Ikettle2 extends utils.Adapter {
 
@@ -61,6 +61,12 @@ class Ikettle2 extends utils.Adapter {
 					}*/
 					break;
 			}
+
+			clearTimeout(lastDataReceived);
+			lastDataReceived = setTimeout( () => {
+				client.destroy();
+				client.connect({port: 2081, host: this.config.ip});
+			}, 120000);
 		});
 
 		client.on('timeout', async () => {
@@ -152,6 +158,7 @@ class Ikettle2 extends utils.Adapter {
 			//this.log.info(`state ${id} deleted`);
 		}
 	}
+
 
 	async decodeStatus(data){
 		let on = false, kettle = false, level = 0;
