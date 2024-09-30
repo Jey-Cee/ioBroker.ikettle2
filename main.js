@@ -43,7 +43,12 @@ class Ikettle2 extends utils.Adapter {
 
 		client = new socket.Socket();
 
-		client.connect({port: 2081, host: this.config.ip});
+		if(this.config.ip !== '') {
+			client.connect({port: 2081, host: this.config.ip});
+		} else {
+			this.log.warn('No ip set in configuration! Please set the ip for the iKettle');
+		}
+
 
 		client.on('ready', async () => {
 			await this.setStateAsync(`${this.namespace}.info.connection`, {val: true, ack: true});

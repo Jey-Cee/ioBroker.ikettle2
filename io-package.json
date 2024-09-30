@@ -3,26 +3,14 @@
 		"name": "ikettle2",
 		"version": "1.0.2",
 		"news": {
-			"1.0.1": {
-				"en": "fixes for Beta release"
-			},
-			"1.0.0": {
-				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"zh-cn": "首次出版"
+			"1.0.3": {
+				"en": "",
+				"de": ""
 			}
 		},
-		"title": "Smarter iKettle 2.0",
 		"titleLang": {
 			"en": "Smarter iKettle 2.0",
-			"de": "Intelligenter iKettle 2.0",
+			"de": "Smarter iKettle 2.0",
 			"ru": "Умнее iKettle 2.0",
 			"pt": "IKettle 2.0 mais inteligente",
 			"nl": "Slimmere iKettle 2.0",
@@ -30,7 +18,8 @@
 			"it": "IKettle 2.0 più intelligente",
 			"es": "IKettle 2.0 más inteligente",
 			"pl": "Inteligentniejszy iKettle 2.0",
-			"zh-cn": "更智能的iKettle 2.0"
+			"zh-cn": "更智能的iKettle 2.0",
+			"uk": "Smarter iKettle 2.0"
 		},
 		"desc": {
 			"en": "Control your Smarter iKettle 2.0 with ioBroker.",
@@ -42,32 +31,40 @@
 			"it": "Controlla il tuo iKettle 2.0 più intelligente con ioBroker.",
 			"es": "Controle su Smarter iKettle 2.0 con ioBroker.",
 			"pl": "Steruj swoim Smarter iKettle 2.0 za pomocą ioBroker.",
-			"zh-cn": "使用ioBroker控制您的Smarter iKettle 2.0。"
+			"zh-cn": "使用ioBroker控制您的Smarter iKettle 2.0。",
+			"uk":"Керуйте своїм Smarter iKettle 2.0 за допомогою ioBroker."
 		},
 		"authors": [
 			"Jey Cee <jey-cee@live.com>"
 		],
 		"keywords": [
+			"ioBroker",
 			"smarter",
 			"ikettle 2.0",
 			"water heater"
 		],
-		"license": "MIT",
+		"licenseInformation": {
+			"type": "free",
+			"license": "MIT"
+		},
 		"platform": "Javascript/Node.js",
 		"icon": "ikettle2.png",
 		"enabled": true,
 		"extIcon": "https://raw.githubusercontent.com/Jey-Cee/ioBroker.ikettle2/master/admin/ikettle2.png",
 		"readme": "https://github.com/Jey-Cee/ioBroker.ikettle2/blob/master/README.md",
 		"loglevel": "info",
+		"tier": 3,
 		"mode": "daemon",
 		"type": "household",
 		"compact": true,
 		"connectionType": "local",
 		"dataSource": "push",
-		"materialize": true,
+		"adminUI": {
+			"config": "json"
+		},
 		"dependencies": [
 			{
-				"js-controller": ">=2.0.0"
+				"js-controller": ">=5.0.19"
 			}
 		]
 	},
@@ -80,7 +77,10 @@
 			"_id": "info",
 			"type": "channel",
 			"common": {
-				"name": "Information"
+				"name": {
+					"en": "Information",
+					"de": "Informationen"
+				}
 			},
 			"native": {}
 		},
@@ -96,7 +96,10 @@
 			"_id": "kettle.preset",
 			"type": "channel",
 			"common": {
-				"name": "Presets for manual usage"
+				"name": {
+					"en": "Presets for manual usage",
+					"de": "Voreinstellungen für die manuelle Nutzung"
+				}
 			},
 			"native": {}
 		},
@@ -105,7 +108,10 @@
 			"type": "state",
 			"common": {
 				"role": "indicator.connected",
-				"name": "Device or service connected",
+				"name": {
+					"en": "Device or service connected",
+					"de": "Gerät oder Dienst verbunden"
+				},
 				"type": "boolean",
 				"read": true,
 				"write": false,
@@ -117,7 +123,10 @@
 			"_id": "kettle.on",
 			"type": "state",
 			"common": {
-				"name": "On",
+				"name": {
+					"en": "On",
+					"de": "An"
+				},
 				"type": "boolean",
 				"role": "switch",
 				"read": true,
@@ -143,7 +152,10 @@
 			"_id": "kettle.on_formula",
 			"type": "state",
 			"common": {
-				"name": "On",
+				"name": {
+					"en": "On",
+					"de": "An"
+				},
 				"type": "boolean",
 				"role": "switch",
 				"read": true,
@@ -169,7 +181,10 @@
 			"_id": "kettle.set_temperature",
 			"type": "state",
 			"common": {
-				"name": "Set heating temperature",
+				"name": {
+					"en": "Set heating temperature",
+					"de": "Heiztemperatur einstellen"
+				},
 				"type": "number",
 				"role": "value.temperature",
 				"read": true,
@@ -196,7 +211,10 @@
 			"_id": "kettle.water_temperature",
 			"type": "state",
 			"common": {
-				"name": "Water temperature",
+				"name": {
+					"en": "Water temperature",
+					"de": "Wasser Temperatur"
+				},
 				"type": "number",
 				"role": "value.temperature",
 				"read": true,
@@ -223,7 +241,10 @@
 			"_id": "kettle.formula_temperature",
 			"type": "state",
 			"common": {
-				"name": "Water temperature",
+				"name": {
+					"en": "Water temperature",
+					"de": "Wasser Temperatur"
+				},
 				"type": "number",
 				"role": "value.temperature",
 				"read": true,
@@ -250,7 +271,10 @@
 			"_id": "kettle.on_plate",
 			"type": "state",
 			"common": {
-				"name": "Kettle is on the plate",
+				"name": {
+					"en": "Kettle is on the plate",
+					"de": "Der Kessel steht auf der Platte"
+				},
 				"type": "boolean",
 				"role": "indicator.reachable",
 				"read": true,
@@ -276,7 +300,10 @@
 			"_id": "kettle.warming_time",
 			"type": "state",
 			"common": {
-				"name": "Time to hold Temperature",
+				"name": {
+					"en": "Time to hold Temperature",
+					"de": "Zeit, die Temperatur zu halten"
+				},
 				"type": "number",
 				"role": "value",
 				"read": true,
@@ -305,7 +332,10 @@
 			"_id": "kettle.water_level",
 			"type": "state",
 			"common": {
-				"name": "Water level",
+				"name": {
+					"en": "Water level",
+					"de": "Wasserstand"
+				},
 				"type": "number",
 				"role": "level",
 				"read": true,
@@ -334,7 +364,10 @@
 			"_id": "kettle.calibrate",
 			"type": "state",
 			"common": {
-				"name": "Calibrate",
+				"name": {
+					"en": "Calibrate",
+					"de": "Kalibrieren"
+				},
 				"type": "boolean",
 				"role": "switch",
 				"read": true,
@@ -360,7 +393,10 @@
 			"_id": "kettle.preset.set_preset",
 			"type": "state",
 			"common": {
-				"name": "Send presets to iKettle",
+				"name": {
+					"en": "Send presets to iKettle",
+					"de": "Voreinstellungen an den iKettle senden"
+				},
 				"type": "boolean",
 				"role": "switch",
 				"read": true,
@@ -386,7 +422,10 @@
 			"_id": "kettle.preset.get_preset",
 			"type": "state",
 			"common": {
-				"name": "Get presets from iKettle",
+				"name": {
+					"en": "Get presets from iKettle",
+					"de": "Voreinstellungen von iKettle abrufen"
+				},
 				"type": "boolean",
 				"role": "switch",
 				"read": true,
@@ -412,7 +451,10 @@
 			"_id": "kettle.preset.warming_time",
 			"type": "state",
 			"common": {
-				"name": "Time to hold Temperature",
+				"name": {
+					"en": "Time to hold Temperature",
+					"de": "Zeit, die Temperatur zu halten"
+				},
 				"type": "number",
 				"role": "value",
 				"read": true,
@@ -441,7 +483,10 @@
 			"_id": "kettle.preset.temperature",
 			"type": "state",
 			"common": {
-				"name": "Heating temperature",
+				"name": {
+					"en": "Heating temperature",
+					"de": "Heiztemperatur"
+				},
 				"type": "number",
 				"role": "value.temperature",
 				"read": true,
@@ -455,7 +500,10 @@
 			"_id": "kettle.preset.formula_temperature",
 			"type": "state",
 			"common": {
-				"name": "Formula temperature",
+				"name": {
+					"en": "Formula temperature",
+					"de": "Formula Temperatur"
+				},
 				"type": "number",
 				"role": "value.temperature",
 				"read": true,
