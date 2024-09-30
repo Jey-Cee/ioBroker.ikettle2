@@ -1,0 +1,16 @@
+{
+  "i18n": true,
+  "type": "panel",
+  "items": {
+    "ip": {
+      "type": "text",
+      "label": "ip",
+      "xl": 5,
+      "lg": 2,
+      "md": 3,
+      "sm": 4,
+      "xs": 12,
+      "newLine": true
+    }
+  }
+}
