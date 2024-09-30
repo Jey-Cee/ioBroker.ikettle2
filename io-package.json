@@ -3,9 +3,9 @@
 		"name": "ikettle2",
 		"version": "1.0.2",
 		"news": {
-			"1.0.3": {
-				"en": "",
-				"de": ""
+			"1.0.2": {
+				"en": "Add watchdog for connection to prevent adapter freeze\n Migrate config to JSON Config\n Update dependencies\n Fix issues found by adapter checker",
+				"de": "Watchdog für die Überwachung der Verbindung um ein Einfrieren des Adapters zu verhindern\n Konfiguration zu JSON Config migriert\n Abhängigkeiten aktualisiert\n Behebung der vom Adapter Checker gefundenen Probleme"
 			}
 		},
 		"titleLang": {

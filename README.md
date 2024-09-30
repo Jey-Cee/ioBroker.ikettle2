@@ -60,7 +60,12 @@ After the beep from base you can turn the kettle back on base and use it.
 
 ---
 ## Changelog
-### ***WORK IN PROGRESS***
+
+### 1.0.2
+* (Jey Cee) Add watchdog for connection to prevent adapter freeze
+* (Jey Cee) Migrate config to JSON Config
+* (Jey Cee) Update dependencies 
+* (Jey Cee) Fix issues found by adapter checker
 
 ### 1.0.1
 * (Jey Cee) fixes for Beta release
