@@ -188,7 +188,7 @@
 				"type": "number",
 				"role": "value.temperature",
 				"read": true,
-				"write": false,
+				"write": true,
 				"unit": "°C",
 				"def": 0,
 				"desc": {
