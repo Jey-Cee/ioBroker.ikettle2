@@ -5,7 +5,7 @@
     "ip": {
       "type": "text",
       "label": "ip",
-      "xl": 5,
+      "xl": 2,
       "lg": 2,
       "md": 3,
       "sm": 4,
