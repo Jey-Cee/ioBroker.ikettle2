@@ -19,7 +19,7 @@
     "url": "https://github.com/Jey-Cee/ioBroker.ikettle2"
   },
   "engines": {
-    "node": ">= 18"
+    "node": ">= 20"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.3.2"
