@@ -61,8 +61,10 @@ After the beep from base you can turn the kettle back on base and use it.
 ## Changelog
 
 ### **WORK IN PROGRESS**
-- (iobroker-bot) Adapter requires node.js >= 20 now.
+* (iobroker-bot) Adapter requires node.js >= 20 now.
 * (Jey Cee) Correct size of ip input on xl displays
+* (Jey Cee) update dependencies
+* (Jey Cee) fix issues found by adapter checker
 
 ### 1.0.2
 * (Jey Cee) Add watchdog for connection to prevent adapter freeze
