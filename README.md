@@ -59,7 +59,7 @@ After the beep from base you can turn the kettle back on base and use it.
 
 ---
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.0.4 (2026-04-02)
 * (jey-cee) fix some issues found by adapter checker
 
 ### 1.0.3 (2026-03-31)
