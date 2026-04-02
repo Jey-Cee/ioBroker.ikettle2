@@ -15,10 +15,6 @@
         "pl": "Adapter wymaga node.js > = 20 teraz.\nPrawidłowy rozmiar wejścia IP na wyświetlaczach xl\naktualizacji zależności\nproblemy znalezione przez sprawdzacz adaptera",
         "uk": "Адаптер вимагає node.js >= 20 тепер.\nПравильний розмір ip введення на дисплей xl\nоновлення залежності\nвиправлено проблеми, знайдені за допомогою адаптера",
         "zh-cn": "适配器需要节点.js >= 20 现在.\nXl 显示时 ip 输入的正确大小\n更新依赖关系\n适配器检查器查找的固定问题"
-      },
-      "1.0.2": {
-        "en": "Add watchdog for connection to prevent adapter freeze\n Migrate config to JSON Config\n Update dependencies\n Fix issues found by adapter checker",
-        "de": "Watchdog für die Überwachung der Verbindung um ein Einfrieren des Adapters zu verhindern\n Konfiguration zu JSON Config migriert\n Abhängigkeiten aktualisiert\n Behebung der vom Adapter Checker gefundenen Probleme"
       }
     },
     "titleLang": {
