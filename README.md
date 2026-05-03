@@ -59,6 +59,10 @@ After the beep from base you can turn the kettle back on base and use it.
 
 ---
 ## Changelog
+### 1.0.5 (2026-05-03)
+* chore(deps-dev): bump @types/node from 25.5.0 to 25.6.0
+* Update from template: X0000-updateNodeJsAtTestAndRelease
+
 ### 1.0.4 (2026-04-02)
 * (jey-cee) fix some issues found by adapter checker
 
