@@ -1,6 +1,6 @@
 {
   "name": "iobroker.ikettle2",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Control your Smarter iKettle 2.0 with ioBroker.",
   "author": {
     "name": "Jey Cee",
@@ -36,7 +36,7 @@
     "@tsconfig/node22": "^22.0.5",
     "@types/iobroker": "npm:@iobroker/types@^7.1.0",
     "@types/node": "^25.6.0",
-    "typescript": "~5.9.3"
+    "typescript": "~6.0.3"
   },
   "main": "main.js",
   "files": [
