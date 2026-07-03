@@ -61,6 +61,11 @@ After the beep from base you can turn the kettle back on base and use it.
 ## Changelog
 ### **WORK IN PROGRESS**
 - (copilot) Adapter requires node.js >= 22 now
+### 1.0.7 (2026-07-03)
+* chore(deps-dev): bump @alcalzone/release-script-plugin-manual-review
+* chore(deps-dev): bump @alcalzone/release-script from 5.2.0 to 5.2.1
+* chore(deps-dev): bump @types/node from 25.9.1 to 25.9.4
+
 ### 1.0.6 (2026-06-03)
 * chore(deps-dev): bump @alcalzone/release-script from 5.1.1 to 5.2.0
 * chore(deps-dev): bump @alcalzone/release-script-plugin-iobroker
