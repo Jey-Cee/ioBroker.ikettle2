@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "ikettle2",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "news": {
+      "1.0.11": {
+        "en": "* chore(deps-dev): bump @types/node from 25.9.8 to 25.9.9",
+        "de": "Abhängigkeiten aktualisiert",
+        "ru": "Обновлены зависимости",
+        "pt": "Dependências atualizadas",
+        "nl": "Afhankelijkheden bijgewerkt",
+        "fr": "Dépendances mises à jour",
+        "it": "Dipendenze aggiornate",
+        "es": "Dependencias actualizadas",
+        "pl": "Zaktualizowano zależności",
+        "uk": "Оновлено залежності",
+        "zh-cn": "更新依赖"
+      },
       "1.0.10": {
         "en": "* chore(deps-dev): bump @types/node from 25.9.5 to 25.9.8",
         "de": "Abhängigkeiten aktualisiert",
