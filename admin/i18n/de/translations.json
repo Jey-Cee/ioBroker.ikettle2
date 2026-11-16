@@ -1,3 +1,11 @@
 {
-	"ip": "IP Adresse"
+	"ip": "IP Adresse",
+	"hotTemperature": "Wasserstand nur messen unter (°C)",
+	"hotTemperatureHelp": "Der Gewichtssensor driftet mit der Wärme. Darüber und beim Heizen bleibt der letzte Wasserstand stehen.",
+	"levelHeader": "Kalibrierung des Wasserstands",
+	"levelHelp": "Eine bekannte Menge kaltes Wasser einfüllen, den Wasserkocher auf den Sockel stellen und kettle.water_level_raw ablesen. Für zwei verschiedene Mengen wiederholen.",
+	"levelLowRaw": "Punkt 1: Rohwert",
+	"levelLowLiters": "Punkt 1: Liter",
+	"levelHighRaw": "Punkt 2: Rohwert",
+	"levelHighLiters": "Punkt 2: Liter"
 }

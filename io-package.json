@@ -186,7 +186,12 @@
     ]
   },
   "native": {
-    "ip": ""
+    "ip": "",
+    "hotTemperature": 40,
+    "levelLowRaw": 2090,
+    "levelLowLiters": 0,
+    "levelHighRaw": 2185,
+    "levelHighLiters": 1.8
   },
   "objects": [],
   "instanceObjects": [
@@ -456,23 +461,61 @@
         "type": "number",
         "role": "level",
         "read": true,
-        "write": true,
+        "write": false,
         "min": 0,
-        "max": 100,
+        "max": 3,
         "def": 0,
         "unit": "L",
         "desc": {
-          "en": "Actual water amount in kettle. Note: The accuracy isn't that good and could be completely false, so check that there is water in the kettle with your eyes.",
-          "de": "Tatsächliche Wassermenge im Wasserkocher. Hinweis: Die Genauigkeit ist nicht so gut und kann völlig falsch sein, daher überprüfen Sie mit Ihren Augen, ob sich Wasser im Wasserkocher befindet.",
-          "ru": "Фактическое количество воды в чайнике. Примечание: точность не очень хорошая и может быть совершенно ложной, поэтому проверьте, есть ли в чайнике вода, смотря глазами.",
-          "pt": "Quantidade real de água no bule. Nota: A precisão não é tão boa e pode ser completamente falsa, portanto, verifique se há água no bule com os olhos.",
-          "nl": "De werkelijke hoeveelheid water in de waterkoker. Opmerking: de nauwkeurigheid is niet zo goed en kan volledig onjuist zijn, dus controleer met uw ogen of er water in de waterkoker zit.",
-          "fr": "Quantité d'eau réelle dans la bouilloire. Remarque: la précision n'est pas très bonne et peut être complètement fausse, vérifiez donc qu'il y a de l'eau dans la bouilloire avec vos yeux.",
-          "it": "Quantità effettiva di acqua nella teiera. Nota: la precisione non è così buona e potrebbe essere completamente falsa, quindi controlla che ci sia acqua nella teiera con gli occhi.",
-          "es": "Cantidad real de agua en la tetera. Nota: la precisión no es tan buena y podría ser completamente falsa, así que verifique que haya agua en la tetera con sus ojos.",
-          "pl": "Aktualna ilość wody w czajniku. Uwaga: dokładność nie jest zbyt dobra i może być całkowicie fałszywa, więc sprawdź, czy w czajniku jest woda za pomocą oczu.",
-          "zh-cn": "水壶中的实际水量。注意：精度不是很好，可能完全错误，因此请用眼睛检查水壶中是否有水。",
-          "uk": "Фактичний обсяг води в чайнику. Примітка: точність не дуже хороша і може бути повністю хибною, тому перевірте, чи є в чайнику вода, дивлячись очима."
+          "en": "Water amount in the kettle in litres. Only measured while the kettle is idle and cold, because the sensor drifts with heat; the last value is kept while heating. Calibrate it in the instance settings.",
+          "de": "Wassermenge im Wasserkocher in Litern. Wird nur gemessen, wenn der Wasserkocher aus und kalt ist, weil der Sensor mit der Wärme driftet; beim Heizen bleibt der letzte Wert stehen. Kalibrierung in den Instanzeinstellungen.",
+          "ru": "Количество воды в чайнике в литрах. Измеряется только когда чайник выключен и холодный, потому что датчик уплывает от тепла; во время нагрева остаётся последнее значение. Калибровка в настройках инстанса.",
+          "pt": "Quantidade de água na chaleira em litros. Só é medida com a chaleira desligada e fria, porque o sensor varia com o calor; durante o aquecimento o último valor é mantido. Calibração nas configurações da instância.",
+          "nl": "Hoeveelheid water in de waterkoker in liters. Wordt alleen gemeten als de waterkoker uit en koud is, omdat de sensor met warmte verloopt; tijdens het verwarmen blijft de laatste waarde staan. Kalibratie in de instantie-instellingen.",
+          "fr": "Quantité d'eau dans la bouilloire en litres. Mesurée uniquement lorsque la bouilloire est éteinte et froide, car le capteur dérive avec la chaleur ; pendant le chauffage, la dernière valeur est conservée. Calibrage dans les paramètres de l'instance.",
+          "it": "Quantità d'acqua nel bollitore in litri. Misurata solo a bollitore spento e freddo, perché il sensore deriva con il calore; durante il riscaldamento resta l'ultimo valore. Calibrazione nelle impostazioni dell'istanza.",
+          "es": "Cantidad de agua en el hervidor en litros. Solo se mide con el hervidor apagado y frío, porque el sensor deriva con el calor; durante el calentamiento se mantiene el último valor. Calibración en la configuración de la instancia.",
+          "pl": "Ilość wody w czajniku w litrach. Mierzona tylko, gdy czajnik jest wyłączony i zimny, bo czujnik dryfuje pod wpływem ciepła; podczas grzania zostaje ostatnia wartość. Kalibracja w ustawieniach instancji.",
+          "zh-cn": "水壶中的水量（升）。仅在水壶关闭且冷却时测量，因为传感器会随温度漂移；加热期间保留最后一个值。在实例设置中校准。",
+          "uk": "Кількість води в чайнику в літрах. Вимірюється лише коли чайник вимкнений і холодний, бо датчик зміщується від тепла; під час нагрівання залишається останнє значення. Калібрування в налаштуваннях інстансу."
+        }
+      },
+      "native": {}
+    },
+    {
+      "_id": "kettle.water_level_raw",
+      "type": "state",
+      "common": {
+        "name": {
+          "en": "Water sensor raw value",
+          "de": "Rohwert des Wassersensors",
+          "ru": "Необработанное значение датчика воды",
+          "pt": "Valor bruto do sensor de água",
+          "nl": "Ruwe waarde van de watersensor",
+          "fr": "Valeur brute du capteur d'eau",
+          "it": "Valore grezzo del sensore dell'acqua",
+          "es": "Valor bruto del sensor de agua",
+          "pl": "Surowa wartość czujnika wody",
+          "zh-cn": "水传感器原始值",
+          "uk": "Необроблене значення датчика води"
+        },
+        "type": "number",
+        "role": "value",
+        "read": true,
+        "write": false,
+        "def": 0,
+        "desc": {
+          "en": "Raw value of the weight sensor in the base (median of the last values). Use it to calibrate the water level in the instance settings.",
+          "de": "Rohwert des Gewichtssensors im Sockel (Median der letzten Werte). Damit wird der Wasserstand in den Instanzeinstellungen kalibriert.",
+          "ru": "Необработанное значение датчика веса в подставке (медиана последних значений). По нему калибруется уровень воды в настройках инстанса.",
+          "pt": "Valor bruto do sensor de peso na base (mediana dos últimos valores). Use-o para calibrar o nível de água nas configurações da instância.",
+          "nl": "Ruwe waarde van de gewichtssensor in de basis (mediaan van de laatste waarden). Gebruik deze om het waterniveau te kalibreren in de instantie-instellingen.",
+          "fr": "Valeur brute du capteur de poids dans la base (médiane des dernières valeurs). Utilisez-la pour calibrer le niveau d'eau dans les paramètres de l'instance.",
+          "it": "Valore grezzo del sensore di peso nella base (mediana degli ultimi valori). Usarlo per calibrare il livello dell'acqua nelle impostazioni dell'istanza.",
+          "es": "Valor bruto del sensor de peso de la base (mediana de los últimos valores). Úselo para calibrar el nivel de agua en la configuración de la instancia.",
+          "pl": "Surowa wartość czujnika wagi w podstawie (mediana ostatnich wartości). Służy do kalibracji poziomu wody w ustawieniach instancji.",
+          "zh-cn": "底座中重量传感器的原始值（最近数值的中位数）。用于在实例设置中校准水位。",
+          "uk": "Необроблене значення датчика ваги в підставці (медіана останніх значень). За ним калібрується рівень води в налаштуваннях інстансу."
         }
       },
       "native": {}

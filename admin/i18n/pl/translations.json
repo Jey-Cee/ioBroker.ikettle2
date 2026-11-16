@@ -1,3 +1,11 @@
 {
-
+	"ip": "Adres IP",
+	"hotTemperature": "Mierz poziom wody tylko poniżej (°C)",
+	"hotTemperatureHelp": "Czujnik wagi dryfuje pod wpływem ciepła. Powyżej tej temperatury i podczas grzania zostaje ostatni poziom.",
+	"levelHeader": "Kalibracja poziomu wody",
+	"levelHelp": "Wlej znaną ilość zimnej wody, postaw czajnik na podstawie i odczytaj kettle.water_level_raw. Powtórz dla dwóch różnych ilości.",
+	"levelLowRaw": "Punkt 1: wartość surowa",
+	"levelLowLiters": "Punkt 1: litry",
+	"levelHighRaw": "Punkt 2: wartość surowa",
+	"levelHighLiters": "Punkt 2: litry"
 }

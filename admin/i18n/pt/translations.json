@@ -1,3 +1,11 @@
 {
-
+	"ip": "Endereço IP",
+	"hotTemperature": "Medir o nível de água apenas abaixo de (°C)",
+	"hotTemperatureHelp": "O sensor de peso varia com o calor. Acima desta temperatura e durante o aquecimento, o último nível é mantido.",
+	"levelHeader": "Calibração do nível de água",
+	"levelHelp": "Coloque uma quantidade conhecida de água fria, ponha a chaleira na base e leia kettle.water_level_raw. Repita para duas quantidades diferentes.",
+	"levelLowRaw": "Ponto 1: valor bruto",
+	"levelLowLiters": "Ponto 1: litros",
+	"levelHighRaw": "Ponto 2: valor bruto",
+	"levelHighLiters": "Ponto 2: litros"
 }

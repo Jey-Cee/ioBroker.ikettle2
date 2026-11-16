@@ -1,3 +1,11 @@
 {
-
+	"ip": "Dirección IP",
+	"hotTemperature": "Medir el nivel de agua solo por debajo de (°C)",
+	"hotTemperatureHelp": "El sensor de peso deriva con el calor. Por encima de esta temperatura y al calentar se mantiene el último nivel.",
+	"levelHeader": "Calibración del nivel de agua",
+	"levelHelp": "Ponga una cantidad conocida de agua fría, coloque el hervidor en la base y lea kettle.water_level_raw. Repita con dos cantidades distintas.",
+	"levelLowRaw": "Punto 1: valor bruto",
+	"levelLowLiters": "Punto 1: litros",
+	"levelHighRaw": "Punto 2: valor bruto",
+	"levelHighLiters": "Punto 2: litros"
 }

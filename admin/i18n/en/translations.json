@@ -1,3 +1,11 @@
 {
-	"ip": "IP address"
+	"ip": "IP address",
+	"hotTemperature": "Measure water level only below (°C)",
+	"hotTemperatureHelp": "The weight sensor drifts with heat. Above this temperature and while heating the last water level is kept.",
+	"levelHeader": "Water level calibration",
+	"levelHelp": "Put a known amount of cold water into the kettle, place it on the base and read kettle.water_level_raw. Do this for two different amounts.",
+	"levelLowRaw": "Point 1: raw value",
+	"levelLowLiters": "Point 1: litres",
+	"levelHighRaw": "Point 2: raw value",
+	"levelHighLiters": "Point 2: litres"
 }

@@ -1,3 +1,11 @@
 {
-
+	"ip": "IP 地址",
+	"hotTemperature": "仅在低于此温度时测量水位 (°C)",
+	"hotTemperatureHelp": "重量传感器会随温度漂移。高于此温度及加热期间保留最后的水位。",
+	"levelHeader": "水位校准",
+	"levelHelp": "倒入已知量的冷水，将水壶放在底座上并读取 kettle.water_level_raw。对两个不同的水量重复此操作。",
+	"levelLowRaw": "点 1：原始值",
+	"levelLowLiters": "点 1：升",
+	"levelHighRaw": "点 2：原始值",
+	"levelHighLiters": "点 2：升"
 }
