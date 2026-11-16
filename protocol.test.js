@@ -46,6 +46,12 @@ describe('parseStatus', () => {
 		expect(status && status.onBase).to.equal(false);
 	});
 
+	it('treats 127 °C as off the base even with an on-base sensor value', () => {
+		// recorded while the kettle was put back: temp 127, raw 2154 (0x086a)
+		const status = parseStatus(Buffer.from('14007f086a007e', 'hex'));
+		expect(status && status.onBase).to.equal(false);
+	});
+
 	it('ignores other messages', () => {
 		expect(parseStatus(Buffer.from('03007e', 'hex'))).to.equal(null);
 	});
