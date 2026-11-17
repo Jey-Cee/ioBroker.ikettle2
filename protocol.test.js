@@ -1,7 +1,7 @@
 'use strict';
 
 const { expect } = require('chai');
-const { FrameParser, parseStatus, litersFromRaw, median } = require('./lib/protocol');
+const { FrameParser, parseStatus, litersFromRaw, calibrationPoints, median } = require('./lib/protocol');
 
 describe('FrameParser', () => {
 	it('returns one message per terminator', () => {
@@ -58,28 +58,57 @@ describe('parseStatus', () => {
 });
 
 describe('litersFromRaw', () => {
-	const cal = { lowRaw: 2169, lowLiters: 1, highRaw: 2221, highLiters: 1.8 };
+	// measured with a real iKettle 2.0 (one-minute averages): empty 2067, 1 l 2131, 1.8 l 2162
+	const three = calibrationPoints({
+		levelEmptyRaw: 2067,
+		levelLowRaw: 2131,
+		levelLowLiters: 1,
+		levelHighRaw: 2162,
+		levelHighLiters: 1.8,
+	});
 
 	it('matches the calibration points', () => {
-		expect(litersFromRaw(2169, cal)).to.equal(1);
-		expect(litersFromRaw(2221, cal)).to.equal(1.8);
+		expect(litersFromRaw(2067, three)).to.equal(0);
+		expect(litersFromRaw(2131, three)).to.equal(1);
+		expect(litersFromRaw(2162, three)).to.equal(1.8);
 	});
 
-	it('interpolates between the points', () => {
-		expect(litersFromRaw(2195, cal)).to.equal(1.4);
+	it('uses the line of the right segment', () => {
+		expect(litersFromRaw(2099, three)).to.equal(0.5);
+		expect(litersFromRaw(2146.5, three)).to.equal(1.4);
 	});
 
-	it('never returns less than 0', () => {
-		expect(litersFromRaw(1500, cal)).to.equal(0);
+	it('extends the outer lines', () => {
+		expect(litersFromRaw(2170, three)).to.equal(2);
+		expect(litersFromRaw(1500, three)).to.equal(0);
 	});
 
-	it('keeps the old fixed scale with the default settings', () => {
-		const defaults = { lowRaw: 2090, lowLiters: 0, highRaw: 2185, highLiters: 1.8 };
+	it('works with two points when the empty point is not set', () => {
+		const defaults = calibrationPoints({
+			levelEmptyRaw: 0,
+			levelLowRaw: 2090,
+			levelLowLiters: 0,
+			levelHighRaw: 2185,
+			levelHighLiters: 1.8,
+		});
+		expect(defaults).to.have.length(2);
 		expect(litersFromRaw(2185, defaults)).to.equal(1.8);
 	});
 
 	it('returns null for an unusable calibration', () => {
-		expect(litersFromRaw(2200, { lowRaw: 2200, lowLiters: 1, highRaw: 2200, highLiters: 1.8 })).to.equal(null);
+		expect(
+			litersFromRaw(2200, [
+				{ raw: 2200, liters: 1 },
+				{ raw: 2200, liters: 1.8 },
+			]),
+		).to.equal(null);
+		// more water with a lower raw value
+		expect(
+			litersFromRaw(2200, [
+				{ raw: 2100, liters: 1.8 },
+				{ raw: 2150, liters: 1 },
+			]),
+		).to.equal(null);
 	});
 });
 

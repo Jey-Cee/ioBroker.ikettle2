@@ -188,6 +188,7 @@
   "native": {
     "ip": "",
     "hotTemperature": 40,
+    "levelEmptyRaw": 0,
     "levelLowRaw": 2090,
     "levelLowLiters": 0,
     "levelHighRaw": 2185,

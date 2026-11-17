@@ -6,7 +6,7 @@
 
 const utils = require('@iobroker/adapter-core');
 const net = require('node:net');
-const { FrameParser, parseStatus, litersFromRaw, median, MSG_STATUS } = require('./lib/protocol');
+const { FrameParser, parseStatus, litersFromRaw, calibrationPoints, median, MSG_STATUS } = require('./lib/protocol');
 
 const PORT = 2081;
 const RESPONSE_TIMEOUT = 5000; // ms to wait for the answer to a command
@@ -350,12 +350,7 @@ class Ikettle2 extends utils.Adapter {
 		if (raw === null) {
 			return;
 		}
-		const liters = litersFromRaw(raw, {
-			lowRaw: this.config.levelLowRaw,
-			lowLiters: this.config.levelLowLiters,
-			highRaw: this.config.levelHighRaw,
-			highLiters: this.config.levelHighLiters,
-		});
+		const liters = litersFromRaw(raw, calibrationPoints(this.config));
 		if (liters === null) {
 			this.log.warn('Water level calibration in the instance settings is invalid');
 			return;
