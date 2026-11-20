@@ -1,3 +1,13 @@
 {
-	"ip": "IP Adresse"
+	"ip": "IP Adresse",
+	"hotTemperature": "Wasserstand nur messen unter (°C)",
+	"hotTemperatureHelp": "Der Gewichtssensor driftet mit der Wärme. Darüber und beim Heizen bleibt der letzte Wasserstand stehen.",
+	"levelHeader": "Kalibrierung des Wasserstands",
+	"levelHelp": "Den leeren Wasserkocher auf den Sockel stellen und kettle.water_level_raw ablesen, dann dasselbe mit zwei bekannten Mengen kaltem Wasser (zum Beispiel 1 l und 1,8 l). Den Wert nach etwa einer Minute verwenden.",
+	"levelEmptyRaw": "Leerer Wasserkocher: Rohwert",
+	"levelEmptyRawHelp": "0 = nicht verwendet. Der Sensor ist nicht linear, ein dritter Punkt (leerer Wasserkocher) macht kleine Mengen genauer.",
+	"levelLowRaw": "Punkt 1: Rohwert",
+	"levelLowLiters": "Punkt 1: Liter",
+	"levelHighRaw": "Punkt 2: Rohwert",
+	"levelHighLiters": "Punkt 2: Liter"
 }

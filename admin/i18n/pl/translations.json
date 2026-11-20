@@ -1,3 +1,13 @@
 {
-
+	"ip": "Adres IP",
+	"hotTemperature": "Mierz poziom wody tylko poniżej (°C)",
+	"hotTemperatureHelp": "Czujnik wagi dryfuje pod wpływem ciepła. Powyżej tej temperatury i podczas grzania zostaje ostatni poziom.",
+	"levelHeader": "Kalibracja poziomu wody",
+	"levelHelp": "Postaw pusty czajnik na podstawie i odczytaj kettle.water_level_raw, potem zrób to samo z dwiema znanymi ilościami zimnej wody (na przykład 1 l i 1,8 l). Użyj wartości po około minucie.",
+	"levelEmptyRaw": "Pusty czajnik: wartość surowa",
+	"levelEmptyRawHelp": "0 = nieużywane. Czujnik nie jest liniowy, trzeci punkt (pusty czajnik) poprawia dokładność dla małych ilości.",
+	"levelLowRaw": "Punkt 1: wartość surowa",
+	"levelLowLiters": "Punkt 1: litry",
+	"levelHighRaw": "Punkt 2: wartość surowa",
+	"levelHighLiters": "Punkt 2: litry"
 }

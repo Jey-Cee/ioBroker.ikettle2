@@ -1,3 +1,13 @@
 {
-	"ip": "IP address"
+	"ip": "IP address",
+	"hotTemperature": "Measure water level only below (°C)",
+	"hotTemperatureHelp": "The weight sensor drifts with heat. Above this temperature and while heating the last water level is kept.",
+	"levelHeader": "Water level calibration",
+	"levelHelp": "Put the empty kettle on the base and read kettle.water_level_raw, then do the same with two known amounts of cold water (for example 1 l and 1.8 l). Use the value after about a minute.",
+	"levelEmptyRaw": "Empty kettle: raw value",
+	"levelEmptyRawHelp": "0 = not used. The sensor is not linear, a third point (empty kettle) makes small amounts more exact.",
+	"levelLowRaw": "Point 1: raw value",
+	"levelLowLiters": "Point 1: litres",
+	"levelHighRaw": "Point 2: raw value",
+	"levelHighLiters": "Point 2: litres"
 }

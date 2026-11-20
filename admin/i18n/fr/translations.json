@@ -1,3 +1,13 @@
 {
-
+	"ip": "Adresse IP",
+	"hotTemperature": "Mesurer le niveau d'eau seulement en dessous de (°C)",
+	"hotTemperatureHelp": "Le capteur de poids dérive avec la chaleur. Au-dessus de cette température et pendant le chauffage, le dernier niveau est conservé.",
+	"levelHeader": "Calibrage du niveau d'eau",
+	"levelHelp": "Posez la bouilloire vide sur la base et lisez kettle.water_level_raw, puis faites de même avec deux quantités connues d'eau froide (par exemple 1 l et 1,8 l). Utilisez la valeur après environ une minute.",
+	"levelEmptyRaw": "Bouilloire vide : valeur brute",
+	"levelEmptyRawHelp": "0 = non utilisé. Le capteur n'est pas linéaire, un troisième point (bouilloire vide) rend les petites quantités plus précises.",
+	"levelLowRaw": "Point 1 : valeur brute",
+	"levelLowLiters": "Point 1 : litres",
+	"levelHighRaw": "Point 2 : valeur brute",
+	"levelHighLiters": "Point 2 : litres"
 }

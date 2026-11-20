@@ -1,3 +1,13 @@
 {
-
+	"ip": "IP-adres",
+	"hotTemperature": "Waterniveau alleen meten onder (°C)",
+	"hotTemperatureHelp": "De gewichtssensor verloopt met warmte. Daarboven en tijdens het verwarmen blijft het laatste niveau staan.",
+	"levelHeader": "Kalibratie van het waterniveau",
+	"levelHelp": "Zet de lege waterkoker op de basis en lees kettle.water_level_raw af, doe daarna hetzelfde met twee bekende hoeveelheden koud water (bijvoorbeeld 1 l en 1,8 l). Gebruik de waarde na ongeveer een minuut.",
+	"levelEmptyRaw": "Lege waterkoker: ruwe waarde",
+	"levelEmptyRawHelp": "0 = niet gebruikt. De sensor is niet lineair, een derde punt (lege waterkoker) maakt kleine hoeveelheden nauwkeuriger.",
+	"levelLowRaw": "Punt 1: ruwe waarde",
+	"levelLowLiters": "Punt 1: liter",
+	"levelHighRaw": "Punt 2: ruwe waarde",
+	"levelHighLiters": "Punt 2: liter"
 }
